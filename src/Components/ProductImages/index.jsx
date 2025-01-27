@@ -16,7 +16,7 @@ export default function ProductImages({ arrows }) {
             onClick={() => setImageIndex(index)}
         >
             <img
-                className={`w-[88px] rounded-xl cursor-pointer hover:opacity-50 transition ${imageIndex === index ? "opacity-50" : null}`}
+                className={`w-[90px] rounded-xl cursor-pointer hover:opacity-50 transition ${imageIndex === index ? "opacity-50" : null}`}
                 src={`./src/assets/images/${item}`}
                 alt={`product thumbnail ${index + 1}`}
             />
@@ -32,7 +32,7 @@ export default function ProductImages({ arrows }) {
                         : null
                 }
                 <img
-                    className="w-[444px] rounded-2xl mb-8 cursor-pointer"
+                    className="w-[450px] rounded-2xl mb-8 cursor-pointer"
                     src={`./src/assets/images/${mainImage[imageIndex]}`}
                     alt="product"
                 />
