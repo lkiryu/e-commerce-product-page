@@ -5,17 +5,17 @@
     "price": 250.00,
     "discount": 50,
     "images": {
-        "mainImage": {
-            "MainImage1": "image-product-1.jpg",
-            "MainImage2": "image-product-1.jpg",
-            "MainImage3": "image-product-1.jpg",
-            "MainImage4": "image-product-1.jpg"
-        },
-        "Thumbnail":{
-            "ImageThumbnail1": "image-product-1-thumbnail.png",
-            "ImageThumbnail2": "image-product-2-thumbnail.png",
-            "ImageThumbnail3": "image-product-3-thumbnail.png",
-            "ImageThumbnail4": "image-product-4-thumbnail.png"
-        }
+        "mainImage": [
+            "image-product-1.jpg",
+            "image-product-2.jpg",
+            "image-product-3.jpg",
+            "image-product-4.jpg"
+        ],
+        "thumbnail": [
+            "image-product-1-thumbnail.jpg",
+            "image-product-2-thumbnail.jpg",
+            "image-product-3-thumbnail.jpg",
+            "image-product-4-thumbnail.jpg"
+        ]
     }
 }
