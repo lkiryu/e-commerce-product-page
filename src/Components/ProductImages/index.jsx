@@ -5,14 +5,22 @@ import { GrFormNext } from "react-icons/gr"
 import { GrFormPrevious } from "react-icons/gr"
 
 export default function ProductImages({ arrows }) {
-    const { productData } = useContext(CartContext)
+    const { productData, imageModal, setImageModal } = useContext(CartContext)
     const [imageIndex, setImageIndex] = useState(0)
     const { mainImage, thumbnail } = productData.images
+
+    function previousImage() {
+        if (imageIndex > 0) setImageIndex(prevIndex => prevIndex - 1)
+    }
+
+    function nextImage() {
+        if (imageIndex < 3) setImageIndex(prevIndex => prevIndex + 1)
+    }
 
     const thumbnailElements = thumbnail.map((item, index) => (
         <div
             key={nanoid()}
-            className={`border-2 rounded-[14px] ${imageIndex === index ? "border-orange" : "border-white"}`}
+            className={`border-2 rounded-[14px] ${imageIndex === index ? "border-orange bg-white" : "border-white/0"}`}
             onClick={() => setImageIndex(index)}
         >
             <img
@@ -28,17 +36,24 @@ export default function ProductImages({ arrows }) {
             <div className="flex relative">
                 {
                     arrows
-                        ? <GrFormPrevious className="absolute rounded-full -left-[24px] top-[198px] bg-white text-5xl p-2 text-very-dark-blue shadow-xl cursor-pointer hover:text-orange transition" />
+                        ? <GrFormPrevious
+                            className="absolute rounded-full -left-[24px] top-[198px] bg-white text-5xl p-2 text-very-dark-blue shadow-xl cursor-pointer hover:text-orange transition"
+                            onClick={previousImage}
+                        />
                         : null
                 }
                 <img
-                    className="w-[450px] rounded-2xl mb-8 cursor-pointer"
+                    className={`w-[450px] rounded-2xl mb-8 ${!imageModal ? "cursor-pointer" : null}`}
+                    onClick={!imageModal ? () => setImageModal(true) : undefined}
                     src={`./src/assets/images/${mainImage[imageIndex]}`}
                     alt="product"
                 />
                 {
                     arrows
-                        ? <GrFormNext className="absolute rounded-full -right-[24px] top-[198px] bg-white text-5xl p-2 text-very-dark-blue shadow-xl cursor-pointer hover:text-orange transition" />
+                        ? <GrFormNext
+                            className="absolute rounded-full -right-[24px] top-[198px] bg-white text-5xl p-2 text-very-dark-blue shadow-xl cursor-pointer hover:text-orange transition"
+                            onClick={nextImage}
+                        />
                         : null
                 }
 
