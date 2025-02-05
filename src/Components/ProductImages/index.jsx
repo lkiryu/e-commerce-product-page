@@ -29,7 +29,7 @@ export default function ProductImages({ arrows }) {
         className={`w-[90px] max-xl:w-[60px] rounded-xl cursor-pointer hover:opacity-50 transition ${
           imageIndex === index ? "opacity-50" : null
         }`}
-        src={`./src/assets/images/${item}`}
+        src={`assets/images/${item}`}
         alt={`product thumbnail ${index + 1}`}
       />
     </div>
@@ -49,7 +49,7 @@ export default function ProductImages({ arrows }) {
             !imageModal ? "cursor-pointer" : null
           }`}
           onClick={!imageModal ? () => setImageModal(true) : undefined}
-          src={`./src/assets/images/${mainImage[imageIndex]}`}
+          src={`assets/images/${mainImage[imageIndex]}`}
           alt="product"
         />
         {arrows ? (

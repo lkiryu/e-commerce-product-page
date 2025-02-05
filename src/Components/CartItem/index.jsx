@@ -20,7 +20,7 @@ export default function CartItem({
     <div className="flex items-center justify-between w-full gap-2">
       <img
         className="w-12 h-12 rounded"
-        src={`./src/assets/images/${image}`}
+        src={`assets/images/${image}`}
         alt="product thumbnail"
       />
       <div>

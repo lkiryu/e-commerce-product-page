@@ -4,8 +4,6 @@ import { nanoid } from "nanoid";
 import { IoCartOutline, IoClose } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import CartItem from "../CartItem";
-import logo from "../../assets/images/logo.svg";
-import avatar from "../../assets/images/image-avatar.png";
 
 export default function Header() {
   const { cart } = useContext(CartContext);
@@ -34,7 +32,7 @@ export default function Header() {
         onClick={() => setOpenMobileMenu(true)}
       />
       <a href="#" className="mr-12 max-xl:mr-4 max-lg:mr-auto">
-        <img src={logo} alt="logo" />
+        <img src="assets/images/logo.svg" alt="logo" />
       </a>
       <nav
         className={`flex mr-auto gap-8 max-xl:gap-4 ${
@@ -90,7 +88,7 @@ export default function Header() {
         </div>
         <img
           className="w-12 cursor-pointer border-[2px] rounded-full border-white hover:border-orange transition"
-          src={avatar}
+          src="assets/images/image-avatar.png"
           alt="avatar icon"
         />
 
